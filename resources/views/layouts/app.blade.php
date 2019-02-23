@@ -67,5 +67,6 @@
             @yield('pagecontent')
         </main>
     </div>
+
 </body>
 </html>

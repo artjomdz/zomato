@@ -17,4 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/myform', 'AjaxDemoController@myform');
+Route::post('select-ajax', ['as'=>'select-ajax','uses'=>'AjaxDemoController@selectAjax']);
+
 Route::get('/home', 'HomeController@index')->name('home');
