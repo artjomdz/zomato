@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Country;
+use App\City;
+use App\Location;
 
 class AjaxDemoController extends Controller
 {
@@ -28,8 +30,9 @@ class AjaxDemoController extends Controller
      */
     public function selectAjax(Request $request)
     {
-    	if($request->ajax()){
-    		$states = DB::table('states')->where('id_country',$request->id_country)->pluck("name","id")->all();
+        if($request->ajax()){
+            dd($request);
+            $states = City::all()->where('id_country',$request->id_country)->pluck("name","id")->all();
     		$data = view('ajax-select',compact('states'))->render();
     		return response()->json(['options'=>$data]);
     	}
