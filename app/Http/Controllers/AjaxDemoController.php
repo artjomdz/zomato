@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Country;
 
 class AjaxDemoController extends Controller
 {
@@ -14,7 +15,7 @@ class AjaxDemoController extends Controller
      */
     public function myform()
     {
-        $countries = DB::table('countries')->pluck("name","id")->all();
+        $countries = Country::all()->pluck("name","id")->all();
         // dd($countries);
     	return view('_components/test_form',compact('countries'));
     }

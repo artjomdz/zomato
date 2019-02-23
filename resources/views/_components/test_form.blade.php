@@ -14,7 +14,6 @@
 
   {!! Form::open() !!}
 
-
     <div class="form-group">
       <label>Select Country:</label>
       {!! Form::select('id_country',[''=>'--- Select Country ---']+$countries,null,['class'=>'form-control']) !!}
