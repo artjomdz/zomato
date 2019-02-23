@@ -64,7 +64,7 @@
         @include('_components._search')
 
         <main class="py-4">
-            @yield('content')
+            @yield('pagecontent')
         </main>
     </div>
 </body>
